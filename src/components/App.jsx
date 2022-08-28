@@ -1,4 +1,11 @@
+import { useContext } from 'react';
+import FormAuth from './FormAuth/FormAuth';
+import { userContext } from './UserContext/UserContext';
+import { UserPage } from './UserPage/UserPage';
+
 export const App = () => {
+  const { user } = useContext(userContext);
+
   return (
     <div
       style={{
@@ -7,10 +14,10 @@ export const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
-        color: '#010101'
+        color: '#010101',
       }}
     >
-      React homework template
+      {user ? <UserPage /> : <FormAuth />}
     </div>
   );
 };
