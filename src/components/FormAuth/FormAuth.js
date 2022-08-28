@@ -73,6 +73,7 @@ const FormAuth = () => {
       .catch(({ error }) => {
         // setErrorMessage(`${error.code} : ${error.message}`);
         // ..
+        // ..
       });
     await updateProfile(auth.currentUser, { displayName }).then(res => {
       console.log('res', res);
